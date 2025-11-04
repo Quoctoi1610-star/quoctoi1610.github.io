@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Huỳnh Quốc Tới - Portfolio V3</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(to bottom right, #fffaf0, #fff);
+    color: #333;
+    margin: 0;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+  }
+
+  /* --- HEADER --- */
+  header {
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url('header-bg.jpg') center/cover no-repeat;
+    filter: brightness(0.6);
+    z-index: 1;
+  }
+
+  header::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, rgba(255,127,80,0.85), rgba(255,153,102,0.75));
+    z-index: 2;
+  }
+
+  header * {
+    position: relative;
+    z-index: 3;
+  }
+
+  header img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.4s ease;
+  }
+
+  header img:hover {
+    transform: scale(1.08);
+  }
+
+  h1 {
+    margin-bottom: 8px;
+    font-size: 2em;
+    font-weight: 700;
+  }
+
+  h2 {
+    color: #ff7f50;
+    border-left: 5px solid #ff7f50;
+    padding-left: 10px;
+  }
+
+  /* --- GENERAL SECTIONS --- */
+  section {
+    background: white;
+    max-width: 900px;
+    margin: 30px auto;
+    border-radius: 12px;
+    padding: 25px 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    animation: slideUp 0.8s ease;
+  }
+
+  ul { list-style: none; padding-left: 0; }
+  li { margin-bottom: 8px; }
+
+  .btn {
+    background: #ff7f50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .btn:hover { background: #ff9966; transform: scale(1.05); }
+
+  footer {
+    text-align: center;
+    background: #ff7f50;
+    color: white;
+    padding: 15px;
+    margin-top: 40px;
+  }
+
+  /* --- Achievements --- */
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  .achievement-card {
+    background: #fffaf0;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+  }
+  .achievement-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  /* --- Slideshow --- */
+  .slideshow-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  .slide { display: none; width: 100%; }
+  .slide img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    animation: fade 1s ease-in-out;
+  }
+
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 12px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    transition: 0.3s;
+    border-radius: 0 3px 3px 0;
+    background-color: rgba(0,0,0,0.3);
+  }
+  .next { right: 0; border-radius: 3px 0 0 3px; }
+  .prev:hover, .next:hover { background-color: rgba(0,0,0,0.6); }
+
+  @keyframes fade { from {opacity: .4} to {opacity: 1} }
+  @keyframes slideUp { from{transform:translateY(30px);opacity:0} to{transform:translateY(0);opacity:1} }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="profile.jpg" alt="Huỳnh Quốc Tới">
+  <h1>Huỳnh Quốc Tới</h1>
+  <p>Class of 2028 | Fulbright University Vietnam</p>
+</header>
+
+<section id="education">
+  <h2>Education</h2>
+  <ul>
+    <li><strong>High School:</strong> Hoang Le Kha High School for the Gifted, Tay Ninh — Major in Biology</li>
+    <li><strong>University:</strong> Fulbright University Vietnam</li>
+  </ul>
+</section>
+
+<section id="achievements">
+  <h2>Achievements</h2>
+  <div class="achievements-grid">
+    <div class="achievement-card">
+      <img src="ach1.jpg" alt="UTE Architecture Innovation Contest 2023">
+      <p><strong>First Prize (Southern Region)</strong><br>
+      <em>UTE Architecture Innovation Contest 2023</em><br>
+      “Developing a 5x20m Alley House Model in Ho Chi Minh City Optimized for Sunlight Exposure”</p>
+    </div>
+    <div class="achievement-card">
+      <img src="ach2.jpg" alt="STEMI Program 2023">
+      <p><strong>Second Prize</strong><br>
+      <em>STEMI Program 2023</em><br>
+      “Applying Alpha Waves for Psychological Relaxation Support among 10th-Grade Students”</p>
+    </div>
+    <div class="achievement-card">
+      <img src="ach3.jpg" alt="Science Fair 2021">
+      <p><strong>Second Prize (Provincial Level)</strong><br>
+      <em>Science and Engineering Fair 2021</em><br>
+      “Study on Forgetfulness Among Secondary Students and Proposed Solutions”</p>
+    </div>
+    <div class="achievement-card">
+      <img src="ach4.jpg" alt="Science Fair 2024">
+      <p><strong>Second Prize (Provincial Level)</strong><br>
+      <em>Science and Engineering Fair 2024</em><br>
+      “Applying Artificial Intelligence to Support Drowning Prevention in Swimming Pools”</p>
+    </div>
+    <div class="achievement-card">
+      <img src="ach5.jpg" alt="DFO Debate Organization">
+      <p><strong>Head of Events Department (2022–2023)</strong><br>
+      <em>Debate Fraternity Organization (DFO)</em><br>
+      A non-governmental debate organization</p>
+    </div>
+    <div class="achievement-card">
+      <img src="ach6.jpg" alt="MASSP Math and Science Summer Program">
+      <p><strong>Scholarship Recipient</strong><br>
+      <em>MASSP – Math and Science Summer Program, Hanoi (2023 & 2024)</em><br>
+      “Học bổng tham dự trại hè Toán và Khoa học MASSP tại Thủ đô Hà Nội”</p>
+    </div>
+  </div>
+</section>
+
+<section id="moments">
+  <h2>Memorable Moments</h2>
+  <div class="slideshow-container">
+    <div class="slide"><img src="moment1.jpg"></div>
+    <div class="slide"><img src="moment2.jpg"></div>
+    <div class="slide"><img src="moment3.jpg"></div>
+    <div class="slide"><img src="moment4.jpg"></div>
+    <div class="slide"><img src="moment5.jpg"></div>
+    <div class="slide"><img src="moment6.jpg"></div>
+    <div class="slide"><img src="moment7.jpg"></div>
+    <div class="slide"><img src="moment8.jpg"></div>
+    <div class="slide"><img src="moment9.jpg"></div>
+    <div class="slide"><img src="moment10.jpg"></div>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Information</h2>
+  <ul>
+    <li><strong>Work Email:</strong> <a href="mailto:quoctoi.work@gmail.com">quoctoi.work@gmail.com</a></li>
+    <li><strong>Academic Email:</strong> <a href="mailto:toi.huynh.240193@student.fulbright.edu.vn">toi.huynh.240193@student.fulbright.edu.vn</a></li>
+  </ul>
+</section>
+
+<footer>© 2025 Huỳnh Quốc Tới — Fulbright University Vietnam</footer>
+
+<script>
+  // Slideshow logic
+  let slideIndex = 0;
+  showSlides(slideIndex);
+  function plusSlides(n) { showSlides(slideIndex += n); }
+  function showSlides(n) {
+    let slides = document.getElementsByClassName("slide");
+    if (n >= slides.length) { slideIndex = 0 }
+    if (n < 0) { slideIndex = slides.length - 1 }
+    for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
+    slides[slideIndex].style.display = "block";
+  }
+</script>
+
+</body>
+</html>
